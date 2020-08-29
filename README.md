@@ -1,2 +1,2 @@
-# politicaComercial
-Exemplo de Política comercial
+# Política Comercial
+Exemplo de Política comercial basico 
