@@ -1,0 +1,162 @@
+<!-- https://pt.stackoverflow.com/questions/320417/criando-elementos-html-em-looping-javascript -->
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <title>Index</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nova Política</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input placeholder="Nome" type="text" class="form-control" id="nome" value="111">
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label for="tipo">Tipo</label>
+                  <select class="custom-select" id="tipo"></select>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label for="tipo">Data de Inicio</label>
+                  <input placeholder="Data de Inicio" type="text" class="form-control" id="dataInicio"
+                    value="11/08/2020">
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                  <label for="tipo">Data de Fim</label>
+                  <input placeholder="Data de Fim" type="text" class="form-control" id="dataFim" value="11/08/2020">
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12">
+                <div class="form-group">
+                  <label for="tipo">Descrição</label>
+                  <textarea class="form-control" id="descricao" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="editavel">
+                  <label class="form-check-label" for="editavel">
+                    Política editável
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button id='btnNovaRegra' type="button" class="btn btn-success">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <h6>Política comercial</h6>
+    <br />
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-sm-6 col-md-5 col-lg-6">
+                  <button type="button" class="btn btn-success">Salvar</button>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <form>
+                <div class="form-group row">
+                  <label for="politicas" class="col-sm-2 col-form-label">Políticas</label>
+                  <div class="col-sm-3">
+                    <select class="custom-select" id="politicas"></select>
+                  </div>
+                  <div class="col-sm-6">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                      Novo
+                    </button>
+                    <button type="button" class="btn btn-info">Editar</button>
+                    <button type="button" class="btn btn-info">Ajuda</button>
+                    <button type="button" id='btnTeste' class="btn btn-danger">Excluir</button>
+                  </div>
+                </div>
+              </form>
+            </li>
+            <li class="list-group-item" id="liNovaRegra">
+              <p class="font-weight-bold" id="titleRegra"></p>
+              <button type="button" id="novaRegra" class="btn btn-info">Nova Regra</button>
+            </li>
+            <li class="list-group-item">
+              <ul class="timeline">
+                <li>
+                  <div class="timeline-badge">
+                    <p class="font-weight-bold">1</p>
+                  </div>
+                  <div class="timeline-panel">
+                    <div class="col-sm-12">
+                      <div class="card">
+                        <div class="card-header">
+                          Regra
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br />
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
